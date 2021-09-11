@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio04</title>
+    <script>
+        function resultado(op) {
+            let valor1 = document.getElementById("txtValor1").value;
+            let valor2 = document.getElementById("txtValor2").value;
+
+            if (valor1 == "" || isNaN(valor1)) {
+                alert("Valor1 inválido! Digite um número");
+                document.getElementById("txtValor1").focus();
+            } else if (valor2 == "" || isNaN(valor2)) {
+                alert("Valor2 inválido! Digite um número");
+                document.getElementById("txtValor2").focus();
+            } else {
+                let resp = eval(parseInt(valor1) + op + parseInt(valor2));
+                document.getElementById("resp").value = resp;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="">Calculadora</label><br>
+        <label for="txtValor1">1º Valor:</label>
+        <input type="text" id="txtValor1">
+        <br>
+        <label for="txtValor2">2º Valor:</label>
+        <input type="text" id="txtValor2">
+        <br>
+        <input type="button" value="+" onclick="resultado('+')">
+        <input type="button" value="-" onclick="resultado('-')">
+        <input type="button" value="*" onclick="resultado('*')">
+        <input type="button" value="/" onclick="resultado('/')">
+        <br>
+        <label for="">Resultado:</label>
+        <input type="text" id="resp">
+    </form>
+</body>
+
+</html>

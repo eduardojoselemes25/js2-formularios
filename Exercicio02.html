@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio02</title>
+    <script>
+        function resultado() {
+            let valor1 = document.getElementById("txtValor1").value;
+            let valor2 = document.getElementById("txtValor2").value;
+
+            if (valor1 == "" || isNaN(valor1)) {
+                alert("Valor1 inválido! Digite um número");
+                document.getElementById("txtValor1").focus();
+            } else if (valor2 == "" || isNaN(valor2)) {
+                alert("Valor2 inválido! Digite um número");
+                document.getElementById("txtValor2").focus();
+            } else {
+                let resultado = eval(parseInt(valor1) + parseInt(valor2));
+                if (resultado >= 60) {
+                    alert("APROVADO");
+                } else {
+                    alert("REPROVADO");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="txtValor1">Nota (1º bimestre):</label>
+        <input type="text" id="txtValor1">
+        <br>
+        <label for="txtValor2">Nota (2º bimestre):</label>
+        <input type="text" id="txtValor2">
+        <br>
+        <input type="button" value="Resultado" onclick="resultado()">
+    </form>
+</body>
+
+</html>
